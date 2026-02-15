@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "MovieFlix",
+    "name": "MovieVerdiQ",
     "slug": "movie-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,8 +14,7 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/logo.png",
-        "backgroundImage": "#000000"
+        "foregroundImage": "./assets/images/logo.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false

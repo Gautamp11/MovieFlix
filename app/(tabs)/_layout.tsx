@@ -3,6 +3,7 @@ import { images } from "@/constants/images";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Image, ImageBackground, Text, View } from "react-native";
+
 const TabIcon = ({ focused, icon, title }: any) => {
   if (focused) {
     return (
@@ -18,11 +19,12 @@ const TabIcon = ({ focused, icon, title }: any) => {
     );
   }
   return (
-    <View className="size-full justify-center items-center">
+    <View className="size-full justify-center items-center mt-4 rounded-full">
       <Image source={icon} tintColor="#A8B5DB" className="size-5" />
     </View>
   );
 };
+
 const _layout = () => {
   return (
     <Tabs
