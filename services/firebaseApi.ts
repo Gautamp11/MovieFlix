@@ -1,4 +1,8 @@
-import { db } from "@/firebaseConfig";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import {
   collection,
   doc,
@@ -10,6 +14,7 @@ import {
   serverTimestamp,
   setDoc,
 } from "firebase/firestore";
+import { auth, db } from "../firebaseConfig";
 
 export const updateSearchCount = async (query: string, movie: Movie) => {
   if (!query) return;
@@ -58,6 +63,38 @@ export const getTopSearches = async () => {
     id: doc.id,
     ...doc.data(),
   }));
+};
+
+export const signUp = async (email: string, password: string) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+
+    return userCredential.user;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const login = async (email: string, password: string) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+
+    return userCredential.user;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const logout = async () => {
+  await signOut(auth);
 };
 
 // //track the serched made by a user

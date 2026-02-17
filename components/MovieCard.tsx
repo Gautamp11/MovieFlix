@@ -23,6 +23,7 @@ const MovieCard = ({
           className="w-full h-52 rounded-lg"
           resizeMode="cover"
         />
+
         <Text numberOfLines={1} className="text-white mt-2 text-sm font-bold">
           {title}
         </Text>
@@ -30,7 +31,7 @@ const MovieCard = ({
         <View className="flex-row items-center justify-start gap-x-1">
           <Image source={icons.star} className="size-4" />
           <Text className="text-white text-xs font-bold uppercase">
-            {Math.round(vote_average / 2)}
+            {Math.round(vote_average || 0)}
           </Text>
         </View>
 

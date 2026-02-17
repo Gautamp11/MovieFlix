@@ -85,17 +85,32 @@ const MovieDetails = () => {
         </View>
       </ScrollView>
 
-      <TouchableOpacity
-        className="absolute bottom-5 left-0 right-0 bg-accent mx-5 rounded-lg flex flex-row items-center justify-center py-3.5"
-        onPress={router.back}
-      >
-        <Image
-          source={icons.arrow}
-          className="size-5 mr-1 mt-0.5 rotate-180"
-          tintColor="#fff"
-        />
-        <Text className="text-white font-semibold text-base">Go back</Text>
-      </TouchableOpacity>
+      <View className="absolute bottom-6 left-0 right-0 px-5">
+        <View className="flex-row items-center gap-3">
+          <TouchableOpacity
+            className="flex-1 bg-accent rounded-xl py-3.5 items-center justify-center"
+            onPress={() => {}}
+            activeOpacity={0.7}
+          >
+            <Text className="text-white font-semibold text-base">
+              Add to Watchlist
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            className="px-4 py-3.5 rounded-xl border border-white/40 bg-black/30 flex-row items-center justify-center"
+            onPress={router.back}
+            activeOpacity={0.7}
+          >
+            <Image
+              source={icons.arrow}
+              className="size-5 mr-1 rotate-180"
+              tintColor="#fff"
+            />
+            <Text className="text-white font-semibold text-base">Back</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
